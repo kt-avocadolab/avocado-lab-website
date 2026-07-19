@@ -55,11 +55,12 @@ test("all local assets referenced by HTML exist", () => {
   }
 });
 
-test("JavaScript progressively enhances three preview tabs", () => {
+test("site does not publish provisional app interface previews", () => {
   const html = read("index.html");
   const script = read("assets/site.js");
-  assert.equal((html.match(/role=["']tab["']/g) || []).length, 3);
-  assert.match(script, /aria-selected/);
+  assert.doesNotMatch(html, /class=["'][^"']*phone(?:\s|["'])/);
+  assert.doesNotMatch(html, /data-preview|role=["']tab(?:list|panel)?["']/);
+  assert.doesNotMatch(script, /previewTabs|selectPreview|data-preview/);
   assert.match(script, /IntersectionObserver/);
 });
 
