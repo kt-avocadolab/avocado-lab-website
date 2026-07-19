@@ -23,5 +23,5 @@ node --check assets/site.js
 ## 內容備註
 
 - FlowRunning 手機畫面依目前 SwiftUI MVP 的資訊架構、視覺 token 與產品文案重建為高保真網頁預覽。
-- Beta 測試與合作 CTA 使用 `mailto:kt@avocado-lab.com`，不收集或儲存訪客資料。
+- Beta 測試與合作 CTA 使用 `mailto:info@avocado-lab.com`，不收集或儲存訪客資料。
 - Garmin、HealthKit、付費訂閱及 App Store 發佈均只列為後續規劃。

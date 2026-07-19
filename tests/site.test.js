@@ -22,8 +22,9 @@ test("single-page site exposes every primary navigation destination", () => {
 
 test("beta and collaboration calls to action use the published contact address", () => {
   const html = read("index.html");
-  const matches = html.match(/mailto:kt@avocado-lab\.com/g) || [];
+  const matches = html.match(/mailto:info@avocado-lab\.com/g) || [];
   assert.ok(matches.length >= 2, "expected at least two email calls to action");
+  assert.doesNotMatch(html, /kt@avocado-lab\.com/);
 });
 
 test("product status is honest about MVP availability", () => {
