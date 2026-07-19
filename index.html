@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173e35">
+    <meta name="description" content="Avocado Lab 設計產品、系統與更好的運作方式。認識我們的 AI 跑步教練 App FlowRunning。">
+    <meta property="og:title" content="Avocado Lab × FlowRunning">
+    <meta property="og:description" content="看懂每一次跑步，知道下一步怎樣跑。FlowRunning 將跑步數據變成可執行的教練建議。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_HK">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Avocado Lab × FlowRunning｜AI 跑步教練</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css">
+    <style>@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }</style>
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">跳到主要內容</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="Avocado Lab 首頁">
+          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 52">
+            <path d="M24 2C36 4 44 15 43 28c-1 12-9 19-19 22C14 47 6 40 5 28 4 15 12 4 24 2Z" fill="#b7d75e"/>
+            <path d="M24 11c8 2 12 9 11 17-1 7-5 12-11 14-6-2-10-7-11-14-1-8 3-15 11-17Z" fill="#f8f4eb"/>
+            <circle cx="24" cy="30" r="7" fill="#f36f45"/>
+          </svg>
+          <span>Avocado Lab</span>
+        </a>
+
+        <nav class="main-nav" aria-label="主要導航">
+          <a href="#flowrunning">FlowRunning</a>
+          <a href="#about">關於我們</a>
+          <a class="nav-contact" href="#contact">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="route-field" aria-hidden="true">
+          <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+            <path class="route-line route-shadow" d="M-40 705C150 615 192 404 398 441c189 34 183 250 390 240 183-9 178-313 390-356 124-25 207 22 305 99"/>
+            <path class="route-line" d="M-40 705C150 615 192 404 398 441c189 34 183 250 390 240 183-9 178-313 390-356 124-25 207 22 305 99"/>
+            <circle cx="397" cy="441" r="9"/>
+            <circle cx="788" cy="681" r="9"/>
+            <circle cx="1178" cy="325" r="9"/>
+          </svg>
+        </div>
+
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow reveal" data-reveal>
+              <span class="eyebrow-dot"></span>
+              Avocado Lab 首個產品
+            </div>
+            <h1 id="hero-title" class="reveal" data-reveal>
+              看懂每一次跑步，<br>
+              <em>知道下一步怎樣跑。</em>
+            </h1>
+            <p class="hero-lead reveal" data-reveal>
+              FlowRunning 不只記錄距離與配速。它從教練角度理解你的表現，把每一次跑步變成清楚、可執行的下一課建議。
+            </p>
+            <div class="hero-actions reveal" data-reveal>
+              <a class="button button-primary" href="mailto:kt@avocado-lab.com?subject=FlowRunning%20Beta%20測試申請">
+                申請參與 Beta
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link" href="#flowrunning">了解 FlowRunning <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-status reveal" data-reveal>
+              <span class="pulse" aria-hidden="true"></span>
+              <span><strong>iOS MVP</strong>　現正進行內部測試</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal" data-reveal aria-label="FlowRunning App 今日訓練畫面預覽">
+            <div class="seed-orbit" aria-hidden="true">
+              <span class="orbit-dot orbit-one"></span>
+              <span class="orbit-dot orbit-two"></span>
+            </div>
+            <div class="phone phone-hero">
+              <div class="phone-hardware">
+                <span class="phone-time">9:41</span>
+                <span class="dynamic-island"></span>
+                <span class="phone-signal">●●● ◒ ▰</span>
+              </div>
+              <div class="phone-screen">
+                <div class="app-status"><span>今日訓練</span><b>基礎期</b></div>
+                <div class="run-title-row">
+                  <span class="run-icon" aria-hidden="true">↗</span>
+                  <div><h2>節奏跑</h2><p>8.0 km · 5:35 /km</p></div>
+                </div>
+                <div class="coach-card">
+                  <div class="coach-label"><span>FL</span><b>Flow 教練</b></div>
+                  <p>前 2 公里先壓住速度，讓呼吸進入節奏。最後 2 公里如感覺穩定，再逐步加速。</p>
+                </div>
+                <div class="week-strip">
+                  <span><small>一</small><b>13</b><i>易</i></span>
+                  <span><small>二</small><b>14</b><i>休</i></span>
+                  <span class="active"><small>三</small><b>15</b><i>節</i></span>
+                  <span><small>四</small><b>16</b><i>易</i></span>
+                  <span><small>五</small><b>17</b><i>休</i></span>
+                </div>
+                <div class="app-tabs"><span class="active">今天</span><span>訓練</span><span>設定</span></div>
+              </div>
+            </div>
+            <div class="metric-float metric-distance"><small>本週距離</small><strong>32.4 <i>km</i></strong><span>↑ 穩定累積</span></div>
+            <div class="metric-float metric-insight"><span aria-hidden="true">✦</span><p>教練已分析<br><strong>今天的節奏</strong></p></div>
+          </div>
+        </div>
+
+        <div class="hero-ticker" aria-label="FlowRunning 功能摘要">
+          <div>
+            <span>跑後分析</span><i>●</i><span>動態課表</span><i>●</i><span>教練視角</span><i>●</i><span>Strava 同步</span><i>●</i>
+            <span aria-hidden="true">跑後分析</span><i aria-hidden="true">●</i><span aria-hidden="true">動態課表</span><i aria-hidden="true">●</i><span aria-hidden="true">教練視角</span><i aria-hidden="true">●</i><span aria-hidden="true">Strava 同步</span><i aria-hidden="true">●</i>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-intro" id="about" aria-labelledby="lab-title">
+        <div class="shell intro-grid">
+          <div class="section-marker reveal" data-reveal><span>01</span> About the lab</div>
+          <div class="intro-copy">
+            <h2 id="lab-title" class="display-title reveal" data-reveal>設計產品、系統，<br>與<span>更好的運作方式。</span></h2>
+            <div class="intro-body reveal" data-reveal>
+              <p>Avocado Lab 是一個位於香港的獨立產品實驗室。我們從真實問題出發，把複雜的資訊整理成簡單、有用而且可以持續運作的產品。</p>
+              <p>FlowRunning 是我們的第一個公開產品：讓跑者不再只看見一堆數字，而是聽見數字背後的教練聲音。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="problem-section" id="flowrunning" aria-labelledby="problem-title">
+        <div class="shell">
+          <div class="section-marker light reveal" data-reveal><span>02</span> Why FlowRunning</div>
+          <div class="problem-grid">
+            <div class="problem-heading reveal" data-reveal>
+              <p class="kicker">數據很多，答案太少。</p>
+              <h2 id="problem-title">你知道跑了甚麼。<br><em>但知道為甚麼嗎？</em></h2>
+            </div>
+            <div class="problem-statement reveal" data-reveal>
+              <p>大部分跑步 App 能準確記下距離、配速與心率，卻把最重要的問題留給跑者自己回答：</p>
+              <ul>
+                <li><span>01</span>今天為甚麼後段掉速？</li>
+                <li><span>02</span>這堂課有沒有達到訓練目的？</li>
+                <li><span>03</span>明天應該照跑、減量，還是休息？</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="answer-card reveal" data-reveal>
+            <div class="answer-seed" aria-hidden="true"><span></span></div>
+            <div>
+              <small>FLOWRUNNING 的答案</small>
+              <p>把一次跑步的數據、訓練目的與近期課表放在一起理解，然後只給你此刻最有用的下一步。</p>
+            </div>
+            <span class="answer-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="process-section" aria-labelledby="process-title">
+        <div class="shell">
+          <div class="section-topline">
+            <div class="section-marker reveal" data-reveal><span>03</span> How it flows</div>
+            <h2 id="process-title" class="display-title reveal" data-reveal>從紀錄，到理解，<br><span>再到下一步。</span></h2>
+          </div>
+
+          <ol class="process-list">
+            <li class="reveal" data-reveal>
+              <div class="step-num">01</div>
+              <div class="step-icon" aria-hidden="true">⌁</div>
+              <h3>同步跑步紀錄</h3>
+              <p>連接 Strava，將近期活動、逐公里表現與關鍵指標帶進 FlowRunning。</p>
+            </li>
+            <li class="reveal" data-reveal>
+              <div class="step-num">02</div>
+              <div class="step-icon" aria-hidden="true">✦</div>
+              <h3>理解訓練表現</h3>
+              <p>AI 教練先判斷這堂課的目的，再分析配速、心率、步頻與跑後感。</p>
+            </li>
+            <li class="reveal" data-reveal>
+              <div class="step-num">03</div>
+              <div class="step-icon" aria-hidden="true">↗</div>
+              <h3>調整下一課</h3>
+              <p>把分析轉成明確建議，協助你掌握下一次訓練的強度、節奏與恢復。</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="features-section" aria-labelledby="features-title">
+        <div class="shell">
+          <div class="features-heading">
+            <div class="section-marker reveal" data-reveal><span>04</span> What it does</div>
+            <h2 id="features-title" class="display-title reveal" data-reveal>不是更多數字。<br><span>是更清楚的判斷。</span></h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card feature-primary reveal" data-reveal>
+              <span class="feature-index">01</span><div class="feature-glyph">✦</div>
+              <h3>跑後分析</h3><p>從訓練目的出發，找出這次跑步做得好的地方與下一個可改善重點。</p>
+              <div class="mini-analysis"><span>教練觀察</span><p>後半程配速穩定，代表前段控制得宜。下一課可以保留相同強度。</p></div>
+            </article>
+            <article class="feature-card reveal" data-reveal>
+              <span class="feature-index">02</span><div class="feature-glyph">↗</div>
+              <h3>動態課表</h3><p>根據近期表現提出下一課方向，讓計劃跟著真實狀態調整。</p>
+              <div class="pace-bars" aria-hidden="true"><i style="height:38%"></i><i style="height:62%"></i><i style="height:53%"></i><i style="height:81%"></i><i style="height:70%"></i><i style="height:94%"></i></div>
+            </article>
+            <article class="feature-card reveal" data-reveal>
+              <span class="feature-index">03</span><div class="feature-glyph">◎</div>
+              <h3>不同教練視角</h3><p>免費 Flow 教練提供穩健建議；Pro 教練庫以不同訓練方法看同一組數據。</p>
+              <div class="coach-row" aria-label="FlowRunning 虛擬教練"><b>FL</b><b>SH</b><b>DJ</b><b>KK</b><b>BO</b></div>
+            </article>
+            <article class="feature-card feature-dark reveal" data-reveal>
+              <span class="feature-index">04</span><div class="feature-glyph">⌁</div>
+              <h3>Strava 數據同步</h3><p>目前 MVP 支援 Strava 活動同步基礎流程；沒有外部連接時亦可使用 Demo 模式體驗。</p>
+              <div class="sync-line"><span>STRAVA</span><i></i><b>FLOW</b></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-section" aria-labelledby="preview-title">
+        <div class="shell preview-layout">
+          <div class="preview-copy">
+            <div class="section-marker light reveal" data-reveal><span>05</span> Inside the app</div>
+            <h2 id="preview-title" class="display-title reveal" data-reveal>每天打開，<br><span>只看現在需要的。</span></h2>
+            <p class="preview-note reveal" data-reveal>依據目前 iOS MVP 介面重建的高保真預覽。</p>
+            <div class="preview-tabs reveal" role="tablist" aria-label="FlowRunning 畫面預覽" data-reveal>
+              <button id="tab-today" role="tab" aria-selected="true" aria-controls="panel-today" data-preview="today"><span>01</span>今天</button>
+              <button id="tab-training" role="tab" aria-selected="false" aria-controls="panel-training" data-preview="training" tabindex="-1"><span>02</span>訓練</button>
+              <button id="tab-analysis" role="tab" aria-selected="false" aria-controls="panel-analysis" data-preview="analysis" tabindex="-1"><span>03</span>教練分析</button>
+            </div>
+          </div>
+
+          <div class="preview-stage reveal" data-reveal>
+            <div class="preview-halo" aria-hidden="true"></div>
+            <div class="phone phone-preview">
+              <div class="phone-hardware"><span class="phone-time">9:41</span><span class="dynamic-island"></span><span class="phone-signal">●●● ◒ ▰</span></div>
+              <div class="phone-screen preview-screen">
+                <section id="panel-today" role="tabpanel" aria-labelledby="tab-today" data-panel="today">
+                  <div class="screen-top"><small>今日結果</small><b>STRAVA</b></div>
+                  <h3>穩定完成節奏訓練</h3>
+                  <div class="metric-trio"><span><small>距離</small><strong>8.02</strong><i>km</i></span><span><small>時間</small><strong>45:18</strong><i>min</i></span><span><small>配速</small><strong>5:39</strong><i>/km</i></span></div>
+                  <div class="screen-coach"><header><b>FL</b><span>Flow 教練</span></header><p>今天後半程仍能維持節奏，代表強度控制得宜。明天安排輕鬆跑，讓身體吸收刺激。</p></div>
+                  <div class="next-card"><small>明天課表調整</small><strong>輕鬆跑 · 6 km</strong><p>維持能完整對話的強度。</p></div>
+                </section>
+                <section id="panel-training" role="tabpanel" aria-labelledby="tab-training" data-panel="training">
+                  <div class="week-header"><button aria-label="上一週">‹</button><div><b>本週</b><small>7月13日 – 7月19日</small></div><button aria-label="下一週">›</button></div>
+                  <div class="calendar-row"><span><small>一</small><b>13</b><i>易</i></span><span><small>二</small><b>14</b><i>休</i></span><span class="selected"><small>三</small><b>15</b><i>節</i></span><span><small>四</small><b>16</b><i>易</i></span><span><small>五</small><b>17</b><i>休</i></span></div>
+                  <div class="selected-plan"><small>今日課表</small><h3>節奏跑</h3><p>8.0 km · 5:35 /km</p><span>穩定速度</span></div>
+                  <div class="plan-list"><b>本週課表</b><p><i class="green"></i><span>週一　輕鬆跑</span><strong>完成</strong></p><p><i class="muted"></i><span>週二　休息</span><strong>完成</strong></p><p><i class="orange"></i><span>週三　節奏跑</span><strong>今天</strong></p><p><i class="indigo"></i><span>週六　長課</span><strong>14 km</strong></p></div>
+                </section>
+                <section id="panel-analysis" role="tabpanel" aria-labelledby="tab-analysis" data-panel="analysis">
+                  <div class="analysis-head"><span>7月15日</span><span>STRAVA</span><h3>穩定完成節奏訓練</h3></div>
+                  <div class="metric-trio compact"><span><small>距離</small><strong>8.02</strong></span><span><small>配速</small><strong>5:39</strong></span><span><small>心率</small><strong>154</strong></span></div>
+                  <div class="chart-card"><b>逐公里配速</b><div class="chart-line"><svg viewBox="0 0 260 70" preserveAspectRatio="none"><path d="M0 47C25 32 43 43 66 35s34-1 55-9 38 13 59 3 50-19 80-17"/><line x1="0" y1="52" x2="260" y2="52"/></svg></div><small>前段保守　·　後段穩定</small></div>
+                  <div class="screen-coach analysis"><header><b>FL</b><span>Flow 教練分析</span></header><h4>這堂課做對了甚麼</h4><p>配速波動收窄，心率在可控範圍，達到節奏跑的穩定刺激。</p><h4>下一步</h4><p>下一次節奏跑可在最後 1 公里小幅加速。</p></div>
+                </section>
+                <div class="app-tabs"><span class="active">今天</span><span>訓練</span><span>設定</span></div>
+              </div>
+            </div>
+            <div class="preview-caption" aria-live="polite" data-preview-caption>今天 · 跑完後立即看懂表現</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="roadmap-section" aria-labelledby="roadmap-title">
+        <div class="shell roadmap-grid">
+          <div>
+            <div class="section-marker reveal" data-reveal><span>06</span> Product status</div>
+            <h2 id="roadmap-title" class="display-title reveal" data-reveal>正在跑第一段，<br><span>方向已經清楚。</span></h2>
+          </div>
+          <div class="status-board reveal" data-reveal>
+            <div class="status-top"><span class="pulse"></span><strong>iOS MVP · 內部測試中</strong><small>2026</small></div>
+            <ul>
+              <li><span>已完成</span><p>Today、Training、跑後分析、教練建議、本地儲存及 Demo flow。</p></li>
+              <li><span>測試中</span><p>Strava 串接基礎、AI 分析 backend 與虛擬教練庫。</p></li>
+              <li><span>後續規劃</span><p>Garmin、HealthKit、付費訂閱與 App Store 發佈；推出時間尚未公布。</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-route" aria-hidden="true"><svg viewBox="0 0 1440 500" preserveAspectRatio="none"><path d="M-20 420C256 410 254 89 566 121s370 330 903 57"/></svg></div>
+        <div class="shell contact-inner">
+          <div class="contact-seed" aria-hidden="true"><span></span></div>
+          <p class="contact-kicker reveal" data-reveal>COME RUN THE NEXT MILE WITH US</p>
+          <h2 id="contact-title" class="reveal" data-reveal>想試用 FlowRunning，<br>或與 Avocado Lab 合作？</h2>
+          <p class="reveal" data-reveal>我們正在邀請跑者參與早期測試，也歡迎產品、研究與商務合作。</p>
+          <a class="button button-light reveal" data-reveal href="mailto:kt@avocado-lab.com?subject=Avocado%20Lab%20查詢">寫信給我們 <span aria-hidden="true">↗</span></a>
+          <a class="email-link reveal" data-reveal href="mailto:kt@avocado-lab.com">kt@avocado-lab.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-top">
+        <a class="brand footer-brand" href="#top" aria-label="返回 Avocado Lab 首頁">
+          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 52"><path d="M24 2C36 4 44 15 43 28c-1 12-9 19-19 22C14 47 6 40 5 28 4 15 12 4 24 2Z" fill="#b7d75e"/><path d="M24 11c8 2 12 9 11 17-1 7-5 12-11 14-6-2-10-7-11-14-1-8 3-15 11-17Z" fill="#f8f4eb"/><circle cx="24" cy="30" r="7" fill="#f36f45"/></svg>
+          <span>Avocado Lab</span>
+        </a>
+        <p>Operations · Products · Systems</p>
+        <nav aria-label="頁尾導航"><a href="#flowrunning">FlowRunning</a><a href="#about">關於我們</a><a href="#contact">聯絡</a></nav>
+      </div>
+      <div class="shell footer-bottom">
+        <p>© 2026 Avocado Lab. All rights reserved.</p>
+        <p class="disclaimer">FlowRunning 的教練建議只供訓練參考，不替代醫療診斷。身體不適時應停止訓練並尋求專業協助。</p>
+      </div>
+    </footer>
+  </body>
+</html>
