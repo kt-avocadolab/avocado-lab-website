@@ -60,7 +60,7 @@ test("all local assets referenced by HTML exist", () => {
 
 test("site uses real Easy MD product artwork and screenshots", () => {
   const html = read("index.html");
-  const script = read("assets/site.js");
+  const script = read("assets/site-easy-md.js");
   assert.match(html, /assets\/easy-md\/app-icon\.png/);
   assert.match(html, /assets\/easy-md\/01-onboarding\.png/);
   assert.match(html, /assets\/easy-md\/04-reading-notes\.png/);
@@ -69,8 +69,15 @@ test("site uses real Easy MD product artwork and screenshots", () => {
 });
 
 test("styles include responsive and reduced-motion rules", () => {
-  const css = read("assets/site.css");
+  const css = read("assets/site-easy-md.css");
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
   assert.match(css, /:focus-visible/);
+});
+
+test("Easy MD assets use fresh URLs so the former site cannot survive browser cache", () => {
+  const html = read("index.html");
+  assert.match(html, /href=["']assets\/site-easy-md\.css["']/);
+  assert.match(html, /src=["']assets\/site-easy-md\.js["']/);
+  assert.doesNotMatch(html, /assets\/site\.(?:css|js)/);
 });

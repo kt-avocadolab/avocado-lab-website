@@ -15,7 +15,7 @@ Then open `http://localhost:4173`.
 
 ```bash
 npm test
-node --check assets/site.js
+node --check assets/site-easy-md.js
 ```
 
 The site uses plain HTML, CSS and a small amount of JavaScript. It is published through GitHub Pages with `www.avocado-lab.com` as its custom domain.
