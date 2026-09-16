@@ -77,7 +77,7 @@ test("styles include responsive and reduced-motion rules", () => {
 
 test("Easy MD assets use fresh URLs so the former site cannot survive browser cache", () => {
   const html = read("index.html");
-  assert.match(html, /href=["']assets\/site-easy-md\.css["']/);
+  assert.match(html, /href=["']assets\/site-easy-md\.css\?v=20260916-hero["']/);
   assert.match(html, /src=["']assets\/site-easy-md\.js["']/);
   assert.doesNotMatch(html, /assets\/site\.(?:css|js)/);
 });
