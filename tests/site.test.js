@@ -81,3 +81,12 @@ test("Easy MD assets use fresh URLs so the former site cannot survive browser ca
   assert.match(html, /src=["']assets\/site-easy-md\.js["']/);
   assert.doesNotMatch(html, /assets\/site\.(?:css|js)/);
 });
+
+test("the secondary Daily Notes phone keeps a near-natural scale and gentle angle", () => {
+  const css = read("assets/site-easy-md.css");
+  assert.match(
+    css,
+    /\.phone-secondary\s*\{[^}]*width:\s*270px;[^}]*transform:\s*rotate\(-3deg\);/s,
+  );
+  assert.match(css, /\.phone img\s*\{[^}]*height:\s*auto;/s);
+});
