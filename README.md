@@ -1,27 +1,28 @@
 # Avocado Lab Website
 
-Avocado Lab 的繁體中文單頁網站，重點介紹 FlowRunning iOS MVP。
+Avocado Lab's English-language company website, featuring Easy MD for iPhone.
 
-## 本機預覽
+## Local preview
 
 ```bash
 cd /Users/kennytsui/Avocadolab/Website
 python3 -m http.server 4173
 ```
 
-然後開啟 `http://localhost:4173`。
+Then open `http://localhost:4173`.
 
-## 驗證
+## Verification
 
 ```bash
 npm test
 node --check assets/site.js
 ```
 
-網站是純 HTML、CSS 與 JavaScript，整個 `Website` 目錄可以直接部署到 GitHub Pages、Cloudflare Pages 或其他靜態網站服務。
+The site uses plain HTML, CSS and a small amount of JavaScript. It is published through GitHub Pages with `www.avocado-lab.com` as its custom domain.
 
-## 內容備註
+## Content notes
 
-- FlowRunning 最終介面尚未定案，網站只呈現產品概念、功能與開發狀態，不展示 App UI 預覽。
-- Beta 測試與合作 CTA 使用 `mailto:info@avocado-lab.com`，不收集或儲存訪客資料。
-- Garmin、HealthKit、付費訂閱及 App Store 發佈均只列為後續規劃。
+- Easy MD is a free, read-only Markdown reader for iPhone and is available on the App Store.
+- Product copy and screenshots are based on the current App Store listing and product documentation.
+- Support is handled through the published Easy MD support form and `info@avocado-lab.com`.
+- The Easy MD privacy policy remains at `/privacy/easy-md/`.

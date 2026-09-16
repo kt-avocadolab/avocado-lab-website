@@ -10,35 +10,38 @@ function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
 
-test("single-page site exposes every primary navigation destination", () => {
+test("English single-page site exposes every primary navigation destination", () => {
   const html = read("index.html");
-  for (const id of ["top", "flowrunning", "about", "contact"]) {
+  for (const id of ["top", "easy-md", "features", "about", "contact"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
-  for (const href of ["#flowrunning", "#about", "#contact"]) {
+  for (const href of ["#easy-md", "#features", "#about", "#contact"]) {
     assert.match(html, new RegExp(`href=["']${href}["']`));
   }
 });
 
-test("beta and collaboration calls to action use the published contact address", () => {
+test("Easy MD replaces the former running product throughout the site", () => {
   const html = read("index.html");
-  const matches = html.match(/mailto:info@avocado-lab\.com/g) || [];
-  assert.ok(matches.length >= 2, "expected at least two email calls to action");
-  assert.doesNotMatch(html, /kt@avocado-lab\.com/);
+  assert.match(html, /Easy MD/);
+  assert.match(html, /Markdown/);
+  assert.match(html, /iCloud Drive/);
+  assert.doesNotMatch(html, /Flow\s?Running|Flowing Running|flowrunning/i);
 });
 
-test("product status is honest about MVP availability", () => {
+test("product availability and support links are published", () => {
   const html = read("index.html");
-  assert.match(html, /iOS MVP/);
-  assert.match(html, /內部測試/);
-  assert.doesNotMatch(html, /立即下載|Download on the App Store/);
+  assert.match(html, /https:\/\/apps\.apple\.com\/app\/id6808278280/);
+  assert.match(html, /href=["']privacy\/easy-md\/?["']/);
+  assert.match(html, /https:\/\/bit\.ly\/4h5pbPp/);
+  assert.match(html, /mailto:info@avocado-lab\.com/);
 });
 
 test("document includes essential metadata and accessibility affordances", () => {
   const html = read("index.html");
-  assert.match(html, /<html[^>]+lang=["']zh-Hant["']/);
+  assert.match(html, /<html[^>]+lang=["']en["']/);
   assert.match(html, /name=["']description["']/);
   assert.match(html, /property=["']og:title["']/);
+  assert.match(html, /property=["']og:image["']/);
   assert.match(html, /<a[^>]+class=["'][^"']*skip-link/);
   assert.match(html, /aria-label=/);
   assert.match(html, /prefers-reduced-motion/);
@@ -55,12 +58,13 @@ test("all local assets referenced by HTML exist", () => {
   }
 });
 
-test("site does not publish provisional app interface previews", () => {
+test("site uses real Easy MD product artwork and screenshots", () => {
   const html = read("index.html");
   const script = read("assets/site.js");
-  assert.doesNotMatch(html, /class=["'][^"']*phone(?:\s|["'])/);
-  assert.doesNotMatch(html, /data-preview|role=["']tab(?:list|panel)?["']/);
-  assert.doesNotMatch(script, /previewTabs|selectPreview|data-preview/);
+  assert.match(html, /assets\/easy-md\/app-icon\.png/);
+  assert.match(html, /assets\/easy-md\/01-onboarding\.png/);
+  assert.match(html, /assets\/easy-md\/04-reading-notes\.png/);
+  assert.doesNotMatch(html, /class=["'][^"']*screen-reel[^"']*reveal/);
   assert.match(script, /IntersectionObserver/);
 });
 

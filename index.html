@@ -1,267 +1,114 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#173e35">
-    <meta name="description" content="Avocado Lab 設計產品、系統與更好的運作方式。認識我們的 AI 跑步教練 App FlowRunning。">
-    <meta property="og:title" content="Avocado Lab × FlowRunning">
-    <meta property="og:description" content="看懂每一次跑步，知道下一步怎樣跑。FlowRunning 將跑步數據變成可執行的教練建議。">
+    <meta name="theme-color" content="#183c32">
+    <meta name="description" content="Avocado Lab is an independent product lab in Hong Kong. Meet Easy MD, the quick, private way to read Markdown files from iCloud Drive.">
+    <meta property="og:title" content="Avocado Lab — Easy MD">
+    <meta property="og:description" content="Your Markdown, ready to read. Browse and read .md files from the folders you choose in iCloud Drive.">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="zh_HK">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Avocado Lab × FlowRunning｜AI 跑步教練</title>
+    <meta property="og:url" content="https://www.avocado-lab.com/">
+    <meta property="og:image" content="https://www.avocado-lab.com/assets/easy-md/app-icon.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <title>Avocado Lab — Easy MD for iPhone</title>
+    <link rel="canonical" href="https://www.avocado-lab.com/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/site.css">
     <style>@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }</style>
     <script src="assets/site.js" defer></script>
   </head>
   <body id="top">
-    <a class="skip-link" href="#main">跳到主要內容</a>
-
+    <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header" data-header>
       <div class="shell header-inner">
-        <a class="brand" href="#top" aria-label="Avocado Lab 首頁">
-          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 52">
-            <path d="M24 2C36 4 44 15 43 28c-1 12-9 19-19 22C14 47 6 40 5 28 4 15 12 4 24 2Z" fill="#b7d75e"/>
-            <path d="M24 11c8 2 12 9 11 17-1 7-5 12-11 14-6-2-10-7-11-14-1-8 3-15 11-17Z" fill="#f8f4eb"/>
-            <circle cx="24" cy="30" r="7" fill="#f36f45"/>
-          </svg>
+        <a class="brand" href="#top" aria-label="Avocado Lab home">
+          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 52"><path d="M24 2C36 4 44 15 43 28c-1 12-9 19-19 22C14 47 6 40 5 28 4 15 12 4 24 2Z" fill="#b8d867"/><path d="M24 11c8 2 12 9 11 17-1 7-5 12-11 14-6-2-10-7-11-14-1-8 3-15 11-17Z" fill="#fbf7ed"/><circle cx="24" cy="30" r="7" fill="#ef7652"/></svg>
           <span>Avocado Lab</span>
         </a>
-
-        <nav class="main-nav" aria-label="主要導航">
-          <a href="#flowrunning">FlowRunning</a>
-          <a href="#about">關於我們</a>
-          <a class="nav-contact" href="#contact">聯絡</a>
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#easy-md">Easy MD</a><a href="#features">Features</a><a href="#about">About</a><a class="nav-contact" href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="route-field" aria-hidden="true">
-          <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
-            <path class="route-line route-shadow" d="M-40 705C150 615 192 404 398 441c189 34 183 250 390 240 183-9 178-313 390-356 124-25 207 22 305 99"/>
-            <path class="route-line" d="M-40 705C150 615 192 404 398 441c189 34 183 250 390 240 183-9 178-313 390-356 124-25 207 22 305 99"/>
-            <circle cx="397" cy="441" r="9"/>
-            <circle cx="788" cy="681" r="9"/>
-            <circle cx="1178" cy="325" r="9"/>
-          </svg>
-        </div>
-
+      <section class="hero" id="easy-md" aria-labelledby="hero-title">
+        <div class="paper-grid" aria-hidden="true"></div>
         <div class="shell hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow reveal" data-reveal>
-              <span class="eyebrow-dot"></span>
-              Avocado Lab 首個產品
-            </div>
-            <h1 id="hero-title" class="reveal" data-reveal>
-              看懂每一次跑步，<br>
-              <em>知道下一步怎樣跑。</em>
-            </h1>
-            <p class="hero-lead reveal" data-reveal>
-              FlowRunning 不只記錄距離與配速。它從教練角度理解你的表現，把每一次跑步變成清楚、可執行的下一課建議。
-            </p>
+            <div class="product-lockup reveal" data-reveal><img src="assets/easy-md/app-icon.png" alt="Easy MD app icon" width="76" height="76"><div><span>An Avocado Lab product</span><strong>Easy MD</strong></div></div>
+            <p class="eyebrow reveal" data-reveal>Markdown reader for iPhone</p>
+            <h1 id="hero-title" class="reveal" data-reveal>Your Markdown,<br><em>ready to read.</em></h1>
+            <p class="hero-lead reveal" data-reveal>Open the notes, reports and documents you keep in iCloud Drive—without setting up a vault or waiting for an index.</p>
             <div class="hero-actions reveal" data-reveal>
-              <a class="button button-primary" href="mailto:info@avocado-lab.com?subject=FlowRunning%20Beta%20測試申請">
-                申請參與 Beta
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a class="text-link" href="#flowrunning">了解 FlowRunning <span aria-hidden="true">↓</span></a>
+              <a class="store-button" href="https://apps.apple.com/app/id6808278280" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18.7 13.2c0-3 2.5-4.4 2.6-4.5a5.6 5.6 0 0 0-4.4-2.4c-1.9-.2-3.7 1.1-4.6 1.1-.9 0-2.3-1.1-3.8-1A5.7 5.7 0 0 0 3.7 9c-2 3.5-.5 8.7 1.4 11.5.9 1.4 2 3 3.5 2.9 1.4-.1 2-1 3.7-1s2.2 1 3.7 1c1.5 0 2.5-1.4 3.4-2.8a12.5 12.5 0 0 0 1.6-3.4 5.2 5.2 0 0 1-2.3-4M15.7 4.3A5.2 5.2 0 0 0 16.9.6a5.3 5.3 0 0 0-3.5 1.8 4.9 4.9 0 0 0-1.3 3.5 4.4 4.4 0 0 0 3.6-1.6"/></svg><span><small>Download on the</small>App Store</span></a>
+              <a class="text-link" href="#features">See how it works <span aria-hidden="true">↓</span></a>
             </div>
-            <div class="hero-status reveal" data-reveal>
-              <span class="pulse" aria-hidden="true"></span>
-              <span><strong>iOS MVP</strong>　現正進行內部測試</span>
-            </div>
+            <ul class="hero-facts reveal" data-reveal aria-label="Easy MD highlights"><li>Free</li><li>No account</li><li>Data not collected</li></ul>
           </div>
-
-          <div class="hero-concept reveal" data-reveal aria-label="FlowRunning 從跑步資料走向下一步建議的產品概念">
-            <div class="concept-orbit" aria-hidden="true"><span></span></div>
-            <div class="concept-seed" aria-hidden="true"><span></span></div>
-            <div class="concept-flow">
-              <div><small>01 · DATA</small><strong>每一次跑步</strong><span>距離、配速、心率與感受</span></div>
-              <i aria-hidden="true">↗</i>
-              <div><small>02 · CONTEXT</small><strong>理解訓練目的</strong><span>把數據放回你的計劃</span></div>
-              <i aria-hidden="true">↗</i>
-              <div><small>03 · NEXT</small><strong>知道下一步</strong><span>清楚、可執行的建議</span></div>
-            </div>
-            <p class="concept-note"><span aria-hidden="true">●</span> 產品介面仍在設計中，現階段不公開預覽</p>
+          <div class="hero-visual reveal" data-reveal aria-label="Easy MD on iPhone">
+            <div class="file-tab file-tab-one" aria-hidden="true">README.md</div><div class="file-tab file-tab-two" aria-hidden="true">notes / september</div>
+            <figure class="phone phone-primary"><img src="assets/easy-md/04-reading-notes.png" alt="Easy MD displaying a formatted Markdown document" width="303" height="660"></figure>
+            <figure class="phone phone-secondary" aria-hidden="true"><img src="assets/easy-md/02-folder-browser.png" alt="" width="303" height="660"></figure>
+            <div class="syntax-card" aria-hidden="true"><span>#</span> read with room<br>to breathe<span class="cursor">_</span></div>
           </div>
         </div>
+        <div class="hero-strip" aria-hidden="true"><span>.md</span><i></i><span>iCloud Drive</span><i></i><span>Read only</span><i></i><span>On device</span></div>
+      </section>
 
-        <div class="hero-ticker" aria-label="FlowRunning 功能摘要">
-          <div>
-            <span>跑後分析</span><i>●</i><span>動態課表</span><i>●</i><span>教練視角</span><i>●</i><span>Strava 同步</span><i>●</i>
-            <span aria-hidden="true">跑後分析</span><i aria-hidden="true">●</i><span aria-hidden="true">動態課表</span><i aria-hidden="true">●</i><span aria-hidden="true">教練視角</span><i aria-hidden="true">●</i><span aria-hidden="true">Strava 同步</span><i aria-hidden="true">●</i>
-          </div>
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="shell about-grid">
+          <div class="section-label reveal" data-reveal><span>01</span> The lab</div>
+          <div><h2 id="about-title" class="display-title reveal" data-reveal>Useful products.<br><em>Less unnecessary stuff.</em></h2><div class="about-copy reveal" data-reveal><p>Avocado Lab is an independent product lab based in Hong Kong. We take ordinary frustrations and shape them into focused, dependable tools.</p><p>Easy MD began with a simple need: open a Markdown file, read it well, and move on.</p></div></div>
         </div>
       </section>
 
-      <section class="lab-intro" id="about" aria-labelledby="lab-title">
-        <div class="shell intro-grid">
-          <div class="section-marker reveal" data-reveal><span>01</span> About the lab</div>
-          <div class="intro-copy">
-            <h2 id="lab-title" class="display-title reveal" data-reveal>設計產品、系統，<br>與<span>更好的運作方式。</span></h2>
-            <div class="intro-body reveal" data-reveal>
-              <p>Avocado Lab 是一個位於香港的獨立產品實驗室。我們從真實問題出發，把複雜的資訊整理成簡單、有用而且可以持續運作的產品。</p>
-              <p>FlowRunning 是我們的第一個公開產品：讓跑者不再只看見一堆數字，而是聽見數字背後的教練聲音。</p>
-            </div>
-          </div>
+      <section class="manifesto-section" aria-labelledby="manifesto-title">
+        <div class="shell manifesto-grid">
+          <div class="document-window reveal" data-reveal aria-hidden="true"><div class="window-bar"><i></i><i></i><i></i><span>why-easy-md.md</span></div><div class="window-copy"><span>#</span><strong>Sometimes you only want to open a Markdown file, read it, and move on.</strong><span class="rule"></span><small>No vault. No import. No indexing ceremony.</small></div></div>
+          <div class="manifesto-copy"><div class="section-label light reveal" data-reveal><span>02</span> Why Easy MD</div><h2 id="manifesto-title" class="reveal" data-reveal>A reader should get out of the way.</h2><p class="reveal" data-reveal>Choose a folder, browse one level at a time and tap the file you need. Easy MD reads from where your documents already live.</p></div>
         </div>
       </section>
 
-      <section class="problem-section" id="flowrunning" aria-labelledby="problem-title">
+      <section class="features-section" id="features" aria-labelledby="features-title">
         <div class="shell">
-          <div class="section-marker light reveal" data-reveal><span>02</span> Why FlowRunning</div>
-          <div class="problem-grid">
-            <div class="problem-heading reveal" data-reveal>
-              <p class="kicker">數據很多，答案太少。</p>
-              <h2 id="problem-title">你知道跑了甚麼。<br><em>但知道為甚麼嗎？</em></h2>
-            </div>
-            <div class="problem-statement reveal" data-reveal>
-              <p>大部分跑步 App 能準確記下距離、配速與心率，卻把最重要的問題留給跑者自己回答：</p>
-              <ul>
-                <li><span>01</span>今天為甚麼後段掉速？</li>
-                <li><span>02</span>這堂課有沒有達到訓練目的？</li>
-                <li><span>03</span>明天應該照跑、減量，還是休息？</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="answer-card reveal" data-reveal>
-            <div class="answer-seed" aria-hidden="true"><span></span></div>
-            <div>
-              <small>FLOWRUNNING 的答案</small>
-              <p>把一次跑步的數據、訓練目的與近期課表放在一起理解，然後只給你此刻最有用的下一步。</p>
-            </div>
-            <span class="answer-arrow" aria-hidden="true">↗</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="process-section" aria-labelledby="process-title">
-        <div class="shell">
-          <div class="section-topline">
-            <div class="section-marker reveal" data-reveal><span>03</span> How it flows</div>
-            <h2 id="process-title" class="display-title reveal" data-reveal>從紀錄，到理解，<br><span>再到下一步。</span></h2>
-          </div>
-
-          <ol class="process-list">
-            <li class="reveal" data-reveal>
-              <div class="step-num">01</div>
-              <div class="step-icon" aria-hidden="true">⌁</div>
-              <h3>同步跑步紀錄</h3>
-              <p>連接 Strava，將近期活動、逐公里表現與關鍵指標帶進 FlowRunning。</p>
-            </li>
-            <li class="reveal" data-reveal>
-              <div class="step-num">02</div>
-              <div class="step-icon" aria-hidden="true">✦</div>
-              <h3>理解訓練表現</h3>
-              <p>AI 教練先判斷這堂課的目的，再分析配速、心率、步頻與跑後感。</p>
-            </li>
-            <li class="reveal" data-reveal>
-              <div class="step-num">03</div>
-              <div class="step-icon" aria-hidden="true">↗</div>
-              <h3>調整下一課</h3>
-              <p>把分析轉成明確建議，協助你掌握下一次訓練的強度、節奏與恢復。</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="features-section" aria-labelledby="features-title">
-        <div class="shell">
-          <div class="features-heading">
-            <div class="section-marker reveal" data-reveal><span>04</span> What it does</div>
-            <h2 id="features-title" class="display-title reveal" data-reveal>不是更多數字。<br><span>是更清楚的判斷。</span></h2>
-          </div>
+          <div class="features-heading"><div class="section-label reveal" data-reveal><span>03</span> What it does</div><h2 id="features-title" class="display-title reveal" data-reveal>Small by design.<br><em>Complete where it counts.</em></h2></div>
           <div class="feature-grid">
-            <article class="feature-card feature-primary reveal" data-reveal>
-              <span class="feature-index">01</span><div class="feature-glyph">✦</div>
-              <h3>跑後分析</h3><p>從訓練目的出發，找出這次跑步做得好的地方與下一個可改善重點。</p>
-              <div class="mini-analysis"><span>教練觀察</span><p>後半程配速穩定，代表前段控制得宜。下一課可以保留相同強度。</p></div>
-            </article>
-            <article class="feature-card reveal" data-reveal>
-              <span class="feature-index">02</span><div class="feature-glyph">↗</div>
-              <h3>動態課表</h3><p>根據近期表現提出下一課方向，讓計劃跟著真實狀態調整。</p>
-              <div class="pace-bars" aria-hidden="true"><i style="height:38%"></i><i style="height:62%"></i><i style="height:53%"></i><i style="height:81%"></i><i style="height:70%"></i><i style="height:94%"></i></div>
-            </article>
-            <article class="feature-card reveal" data-reveal>
-              <span class="feature-index">03</span><div class="feature-glyph">◎</div>
-              <h3>不同教練視角</h3><p>免費 Flow 教練提供穩健建議；Pro 教練庫以不同訓練方法看同一組數據。</p>
-              <div class="coach-row" aria-label="FlowRunning 虛擬教練"><b>FL</b><b>SH</b><b>DJ</b><b>KK</b><b>BO</b></div>
-            </article>
-            <article class="feature-card feature-dark reveal" data-reveal>
-              <span class="feature-index">04</span><div class="feature-glyph">⌁</div>
-              <h3>Strava 數據同步</h3><p>目前 MVP 支援 Strava 活動同步基礎流程；沒有外部連接時亦可使用 Demo 模式體驗。</p>
-              <div class="sync-line"><span>STRAVA</span><i></i><b>FLOW</b></div>
-            </article>
+            <article class="feature-card reveal" data-reveal><span>01</span><b aria-hidden="true">⌘</b><h3>Browse familiar folders</h3><p>Pick a starting folder in iCloud Drive, move through subfolders and return to where you left off.</p></article>
+            <article class="feature-card feature-accent reveal" data-reveal><span>02</span><b aria-hidden="true">Aa</b><h3>Markdown, properly rendered</h3><p>Headings, lists, tasks, quotes, tables, code, links and images are laid out for comfortable reading.</p></article>
+            <article class="feature-card feature-dark reveal" data-reveal><span>03</span><b aria-hidden="true">↗</b><h3>Links stay connected</h3><p>Follow relative links between Markdown files and view relative images inside your documents.</p></article>
+            <article class="feature-card reveal" data-reveal><span>04</span><b aria-hidden="true">•••</b><h3>Made for real reading</h3><p>Five text sizes, sorting, expandable YAML front matter, dark mode, Dynamic Type and VoiceOver.</p></article>
           </div>
         </div>
       </section>
 
-      <section class="principles-section" aria-labelledby="principles-title">
-        <div class="shell">
-          <div class="principles-heading">
-            <div class="section-marker light reveal" data-reveal><span>05</span> Product direction</div>
-            <div>
-              <h2 id="principles-title" class="display-title reveal" data-reveal>介面仍在打磨，<br><span>先說清楚產品原則。</span></h2>
-              <p class="principles-note reveal" data-reveal>FlowRunning 的最終畫面尚未定案。我們現在公開的是產品如何思考，而不是一套可能改變的介面。</p>
-            </div>
-          </div>
-          <div class="principles-grid">
-            <article class="principle-card reveal" data-reveal><span>01</span><h3>理解先於展示</h3><p>先知道一堂課為何這樣跑，再決定哪些數據值得被看見。</p></article>
-            <article class="principle-card reveal" data-reveal><span>02</span><h3>建議必須可行動</h3><p>不只描述發生了甚麼，而是把分析轉成下一課能夠採取的做法。</p></article>
-            <article class="principle-card reveal" data-reveal><span>03</span><h3>計劃跟着狀態變</h3><p>課表不是固定清單；近期表現、恢復與目標會一起影響下一步。</p></article>
-          </div>
-          <div class="principles-route reveal" data-reveal aria-hidden="true"><span>DATA</span><i></i><b>CONTEXT</b><i></i><strong>NEXT RUN</strong></div>
+      <section class="screens-section" aria-labelledby="screens-title">
+        <div class="shell screens-heading"><div class="section-label light reveal" data-reveal><span>04</span> From folder to page</div><h2 id="screens-title" class="display-title reveal" data-reveal>Three taps between<br><em>finding and reading.</em></h2></div>
+        <div class="screen-reel">
+          <figure><span>01 / Choose</span><img src="assets/easy-md/01-onboarding.png" alt="Easy MD starting folder selection screen" loading="lazy" width="303" height="660"></figure>
+          <figure><span>02 / Browse</span><img src="assets/easy-md/03-august-notes.png" alt="Easy MD folder showing Markdown documents" loading="lazy" width="303" height="660"></figure>
+          <figure><span>03 / Read</span><img src="assets/easy-md/05-reading-checklist.png" alt="Easy MD rendering a Markdown checklist" loading="lazy" width="303" height="660"></figure>
         </div>
       </section>
 
-      <section class="roadmap-section" aria-labelledby="roadmap-title">
-        <div class="shell roadmap-grid">
-          <div>
-            <div class="section-marker reveal" data-reveal><span>06</span> Product status</div>
-            <h2 id="roadmap-title" class="display-title reveal" data-reveal>正在跑第一段，<br><span>方向已經清楚。</span></h2>
-          </div>
-          <div class="status-board reveal" data-reveal>
-            <div class="status-top"><span class="pulse"></span><strong>iOS MVP · 內部測試中</strong><small>2026</small></div>
-            <ul>
-              <li><span>已完成</span><p>核心訓練流程、跑後分析、教練建議、本地儲存及 Demo flow。</p></li>
-              <li><span>測試中</span><p>Strava 串接基礎、AI 分析 backend 與虛擬教練庫。</p></li>
-              <li><span>後續規劃</span><p>Garmin、HealthKit、付費訂閱與 App Store 發佈；推出時間尚未公布。</p></li>
-            </ul>
-          </div>
+      <section class="privacy-section" aria-labelledby="privacy-title">
+        <div class="shell privacy-grid">
+          <div><div class="section-label reveal" data-reveal><span>05</span> Private by default</div><h2 id="privacy-title" class="display-title reveal" data-reveal>Your documents stay<br><em>your documents.</em></h2></div>
+          <div class="privacy-copy reveal" data-reveal><p>Easy MD is deliberately read-only. It cannot create, edit, rename, move or delete your files.</p><ul><li>No account or sign-in</li><li>No analytics or advertising SDKs</li><li>No document uploads</li><li>No reading-history collection</li></ul><a class="text-link" href="privacy/easy-md/">Read the privacy policy <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-route" aria-hidden="true"><svg viewBox="0 0 1440 500" preserveAspectRatio="none"><path d="M-20 420C256 410 254 89 566 121s370 330 903 57"/></svg></div>
-        <div class="shell contact-inner">
-          <div class="contact-seed" aria-hidden="true"><span></span></div>
-          <p class="contact-kicker reveal" data-reveal>COME RUN THE NEXT MILE WITH US</p>
-          <h2 id="contact-title" class="reveal" data-reveal>想試用 FlowRunning，<br>或與 Avocado Lab 合作？</h2>
-          <p class="reveal" data-reveal>我們正在邀請跑者參與早期測試，也歡迎產品、研究與商務合作。</p>
-          <a class="button button-light reveal" data-reveal href="mailto:info@avocado-lab.com?subject=Avocado%20Lab%20查詢">寫信給我們 <span aria-hidden="true">↗</span></a>
-          <a class="email-link reveal" data-reveal href="mailto:info@avocado-lab.com">info@avocado-lab.com</a>
-        </div>
+        <div class="contact-mark" aria-hidden="true">#</div>
+        <div class="shell contact-inner"><img class="contact-icon reveal" data-reveal src="assets/easy-md/app-icon.png" alt="" width="96" height="96"><p class="contact-kicker reveal" data-reveal>AVAILABLE ON THE APP STORE</p><h2 id="contact-title" class="reveal" data-reveal>Make reading Markdown<br><em>the easy part.</em></h2><p class="reveal" data-reveal>Download Easy MD for iPhone, or get in touch with Avocado Lab.</p><div class="contact-actions reveal" data-reveal><a class="store-button store-button-light" href="https://apps.apple.com/app/id6808278280" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18.7 13.2c0-3 2.5-4.4 2.6-4.5a5.6 5.6 0 0 0-4.4-2.4c-1.9-.2-3.7 1.1-4.6 1.1-.9 0-2.3-1.1-3.8-1A5.7 5.7 0 0 0 3.7 9c-2 3.5-.5 8.7 1.4 11.5.9 1.4 2 3 3.5 2.9 1.4-.1 2-1 3.7-1s2.2 1 3.7 1c1.5 0 2.5-1.4 3.4-2.8a12.5 12.5 0 0 0 1.6-3.4 5.2 5.2 0 0 1-2.3-4M15.7 4.3A5.2 5.2 0 0 0 16.9.6a5.3 5.3 0 0 0-3.5 1.8 4.9 4.9 0 0 0-1.3 3.5 4.4 4.4 0 0 0 3.6-1.6"/></svg><span><small>Download on the</small>App Store</span></a><a class="outline-button" href="https://bit.ly/4h5pbPp" target="_blank" rel="noopener">Easy MD support <span aria-hidden="true">↗</span></a></div><a class="email-link reveal" data-reveal href="mailto:info@avocado-lab.com">info@avocado-lab.com</a></div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-top">
-        <a class="brand footer-brand" href="#top" aria-label="返回 Avocado Lab 首頁">
-          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 52"><path d="M24 2C36 4 44 15 43 28c-1 12-9 19-19 22C14 47 6 40 5 28 4 15 12 4 24 2Z" fill="#b7d75e"/><path d="M24 11c8 2 12 9 11 17-1 7-5 12-11 14-6-2-10-7-11-14-1-8 3-15 11-17Z" fill="#f8f4eb"/><circle cx="24" cy="30" r="7" fill="#f36f45"/></svg>
-          <span>Avocado Lab</span>
-        </a>
-        <p>Operations · Products · Systems</p>
-        <nav aria-label="頁尾導航"><a href="#flowrunning">FlowRunning</a><a href="#about">關於我們</a><a href="#contact">聯絡</a></nav>
-      </div>
-      <div class="shell footer-bottom">
-        <p>© 2026 Avocado Lab. All rights reserved.</p>
-        <p class="disclaimer">FlowRunning 的教練建議只供訓練參考，不替代醫療診斷。身體不適時應停止訓練並尋求專業協助。</p>
-      </div>
+      <div class="shell footer-top"><a class="brand footer-brand" href="#top" aria-label="Back to top"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 52"><path d="M24 2C36 4 44 15 43 28c-1 12-9 19-19 22C14 47 6 40 5 28 4 15 12 4 24 2Z" fill="#b8d867"/><path d="M24 11c8 2 12 9 11 17-1 7-5 12-11 14-6-2-10-7-11-14-1-8 3-15 11-17Z" fill="#fbf7ed"/><circle cx="24" cy="30" r="7" fill="#ef7652"/></svg><span>Avocado Lab</span></a><p>Focused products for everyday problems.</p><nav aria-label="Footer navigation"><a href="#easy-md">Easy MD</a><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div>
+      <div class="shell footer-bottom"><p>© 2026 Avocado Lab. All rights reserved.</p><p><a href="privacy/easy-md/">Privacy</a> · <a href="https://bit.ly/4h5pbPp" target="_blank" rel="noopener">Support</a></p></div>
     </footer>
   </body>
 </html>
