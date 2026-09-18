@@ -36,6 +36,23 @@ test("product availability and support links are published", () => {
   assert.match(html, /mailto:info@avocado-lab\.com/);
 });
 
+test("Easy MD privacy page discloses every locally stored preference", () => {
+  const html = read("privacy/easy-md/index.html");
+  for (const disclosure of [
+    "September 18, 2026",
+    "display name",
+    "Favorites",
+    "ten most recently opened documents",
+    "reading position",
+    "launch preference",
+    "line spacing",
+    "background",
+    "relative to the folder you authorized",
+  ]) {
+    assert.match(html, new RegExp(disclosure));
+  }
+});
+
 test("document includes essential metadata and accessibility affordances", () => {
   const html = read("index.html");
   assert.match(html, /<html[^>]+lang=["']en["']/);
