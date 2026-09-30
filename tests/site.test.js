@@ -39,7 +39,7 @@ test("product availability and support links are published", () => {
 test("Easy MD privacy page discloses every locally stored preference", () => {
   const html = read("privacy/easy-md/index.html");
   for (const disclosure of [
-    "September 18, 2026",
+    "October 1, 2026",
     "display name",
     "Favorites",
     "ten most recently opened documents",
@@ -48,6 +48,8 @@ test("Easy MD privacy page discloses every locally stored preference", () => {
     "line spacing",
     "background",
     "relative to the folder you authorized",
+    "Photos Add-only permission",
+    "not sent to Avocado Lab",
   ]) {
     assert.match(html, new RegExp(disclosure));
   }
