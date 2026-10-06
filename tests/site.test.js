@@ -39,7 +39,7 @@ test("product availability and support links are published", () => {
 test("Easy MD privacy page discloses every locally stored preference", () => {
   const html = read("privacy/easy-md/index.html");
   for (const disclosure of [
-    "October 1, 2026",
+    "October 6, 2026",
     "display name",
     "Favorites",
     "ten most recently opened documents",
@@ -50,9 +50,21 @@ test("Easy MD privacy page discloses every locally stored preference", () => {
     "relative to the folder you authorized",
     "Photos Add-only permission",
     "not sent to Avocado Lab",
+    "Google Mobile Ads",
+    "If you decline tracking",
   ]) {
     assert.match(html, new RegExp(disclosure));
   }
+});
+
+test("site and privacy page accurately disclose Favorites advertising", () => {
+  const home = read("index.html");
+  const policy = read("privacy/easy-md/index.html");
+  assert.match(home, /Favorites banner ads/);
+  assert.doesNotMatch(home, /Data not collected|No analytics or advertising SDKs/);
+  assert.match(policy, /Starting with version 1\.3\.2, the free app shows banner advertisements in Favorites/);
+  assert.match(policy, /If you allow tracking, Google may use the advertising identifier for tracking/);
+  assert.match(policy, /If you decline tracking, eligible ads may still appear/);
 });
 
 test("document includes essential metadata and accessibility affordances", () => {
