@@ -1,6 +1,6 @@
 # Avocado Lab Website
 
-Avocado Lab's English-language company website, featuring Easy MD for iPhone.
+Avocado Lab's English-language company website, featuring Easy MD and Flow Squat for iPhone.
 
 ## Local preview
 
@@ -22,7 +22,9 @@ The site uses plain HTML, CSS and a small amount of JavaScript. It is published 
 
 ## Content notes
 
-- Easy MD is a free, read-only Markdown reader for iPhone and is available on the App Store.
-- Product copy and screenshots are based on the current App Store listing and product documentation.
-- Support is handled through the published Easy MD support form and `info@avocado-lab.com`.
-- The Easy MD privacy policy remains at `/privacy/easy-md/`.
+- The home page gives a concise introduction to both products.
+- Easy MD 1.3.1 is a free, read-only Markdown reader for iPhone and is available on the App Store; its detailed page is at `/easy-md/`.
+- Flow Squat is in development and is not yet on the App Store; its product page is at `/flow-squat/`.
+- Product copy and artwork are based on the current project documentation and release records.
+- Support and general enquiries use `info@avocado-lab.com`.
+- Privacy policies are published at `/privacy/easy-md/` and `/privacy/flow-squat/`.

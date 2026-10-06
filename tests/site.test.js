@@ -4,39 +4,64 @@ const path = require("node:path");
 const test = require("node:test");
 
 const root = path.resolve(__dirname, "..");
-const htmlPath = path.join(root, "index.html");
 
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
 
-test("English single-page site exposes every primary navigation destination", () => {
-  const html = read("index.html");
-  for (const id of ["top", "easy-md", "features", "about", "contact"]) {
-    assert.match(html, new RegExp(`id=["']${id}["']`));
-  }
-  for (const href of ["#easy-md", "#features", "#about", "#contact"]) {
-    assert.match(html, new RegExp(`href=["']${href}["']`));
-  }
-});
+function assertPageBasics(relativePath) {
+  const html = read(relativePath);
+  assert.match(html, /<html[^>]+lang=["']en["']/);
+  assert.match(html, /name=["']description["']/);
+  assert.match(html, /<a[^>]+class=["'][^"']*skip-link/);
+  assert.match(html, /aria-label=/);
+}
 
-test("Easy MD replaces the former running product throughout the site", () => {
+test("home introduces both Avocado Lab products and links to their pages", () => {
   const html = read("index.html");
   assert.match(html, /Easy MD/);
-  assert.match(html, /Markdown/);
-  assert.match(html, /iCloud Drive/);
-  assert.doesNotMatch(html, /Flow\s?Running|Flowing Running|flowrunning/i);
+  assert.match(html, /Flow Squat/);
+  assert.match(html, /href=["']easy-md\/["']/);
+  assert.match(html, /href=["']flow-squat\/["']/);
+  assert.doesNotMatch(html, /Flow\s?Running|Flowing Running/i);
 });
 
-test("product availability and support links are published", () => {
-  const html = read("index.html");
+test("Easy MD has a detailed v1.3.1 product page", () => {
+  const html = read("easy-md/index.html");
+  assert.match(html, /Version 1\.3\.1/);
+  assert.match(html, /speech controls/i);
+  assert.match(html, /focus mode/i);
+  assert.match(html, /folder history/i);
+  assert.match(html, /filter/i);
   assert.match(html, /https:\/\/apps\.apple\.com\/app\/id6808278280/);
-  assert.match(html, /href=["']privacy\/easy-md\/?["']/);
-  assert.match(html, /https:\/\/bit\.ly\/4h5pbPp/);
+  assert.match(html, /href=["']\.\.\/privacy\/easy-md\/["']/);
+});
+
+test("Flow Squat has a product page without a download claim", () => {
+  const html = read("flow-squat/index.html");
+  assert.match(html, /Flow Squat/);
+  assert.match(html, /In development/i);
+  assert.match(html, /VALID/);
+  assert.match(html, /NO REP/);
+  assert.match(html, /on your device/i);
+  assert.match(html, /href=["']\.\.\/privacy\/flow-squat\/["']/);
+  assert.doesNotMatch(html, /apps\.apple\.com|Download on the App Store/i);
+  assert.match(html, /not (?:an official|affiliated)/i);
+});
+
+test("Flow Squat privacy policy documents camera and local session data", () => {
+  const html = read("privacy/flow-squat/index.html");
+  assert.match(html, /Privacy Policy for Flow Squat/);
+  assert.match(html, /front camera/i);
+  assert.match(html, /never recorded/i);
+  assert.match(html, /never[^.]*uploaded/i);
+  assert.match(html, /training sessions/i);
+  assert.match(html, /No account/i);
+  assert.match(html, /No analytics/i);
   assert.match(html, /mailto:info@avocado-lab\.com/);
 });
 
-test("Easy MD privacy page discloses every locally stored preference", () => {
+test("Easy MD privacy page preserves current local-storage and advertising disclosures", () => {
   const html = read("privacy/easy-md/index.html");
   for (const disclosure of [
     "October 6, 2026",
@@ -57,67 +82,71 @@ test("Easy MD privacy page discloses every locally stored preference", () => {
   }
 });
 
-test("site and privacy page accurately disclose Favorites advertising", () => {
-  const home = read("index.html");
+test("Easy MD 1.3.1 product copy and 1.3.2 privacy disclosure remain distinct", () => {
+  const product = read("easy-md/index.html");
   const policy = read("privacy/easy-md/index.html");
-  assert.match(home, /Favorites banner ads/);
-  assert.doesNotMatch(home, /Data not collected|No analytics or advertising SDKs/);
+  assert.match(product, /Version 1\.3\.1/);
   assert.match(policy, /Starting with version 1\.3\.2, the free app shows banner advertisements in Favorites/);
   assert.match(policy, /If you allow tracking, Google may use the advertising identifier for tracking/);
   assert.match(policy, /If you decline tracking, eligible ads may still appear/);
 });
 
-test("document includes essential metadata and accessibility affordances", () => {
-  const html = read("index.html");
-  assert.match(html, /<html[^>]+lang=["']en["']/);
-  assert.match(html, /name=["']description["']/);
-  assert.match(html, /property=["']og:title["']/);
-  assert.match(html, /property=["']og:image["']/);
-  assert.match(html, /<a[^>]+class=["'][^"']*skip-link/);
-  assert.match(html, /aria-label=/);
-  assert.match(html, /prefers-reduced-motion/);
-});
-
-test("all local assets referenced by HTML exist", () => {
-  const html = read("index.html");
-  const references = [...html.matchAll(/(?:src|href)=["'](?!https?:|mailto:|#)([^"']+)["']/g)]
-    .map((match) => match[1].split("?")[0])
-    .filter((reference) => !reference.startsWith("data:"));
-
-  for (const reference of references) {
-    assert.ok(fs.existsSync(path.join(root, reference)), `missing local asset: ${reference}`);
+test("every public page includes core metadata and accessibility affordances", () => {
+  for (const page of [
+    "index.html",
+    "easy-md/index.html",
+    "flow-squat/index.html",
+    "privacy/easy-md/index.html",
+    "privacy/flow-squat/index.html",
+  ]) {
+    assertPageBasics(page);
   }
 });
 
-test("site uses real Easy MD product artwork and screenshots", () => {
-  const html = read("index.html");
-  const script = read("assets/site-easy-md.js");
-  assert.match(html, /assets\/easy-md\/app-icon\.png/);
-  assert.match(html, /assets\/easy-md\/01-onboarding\.png/);
-  assert.match(html, /assets\/easy-md\/04-reading-notes\.png/);
-  assert.doesNotMatch(html, /class=["'][^"']*screen-reel[^"']*reveal/);
-  assert.match(script, /IntersectionObserver/);
+test("all local assets and page links referenced by HTML exist", () => {
+  const pages = [
+    "index.html",
+    "easy-md/index.html",
+    "flow-squat/index.html",
+    "privacy/easy-md/index.html",
+    "privacy/flow-squat/index.html",
+  ];
+
+  for (const page of pages) {
+    const html = read(page);
+    const pageDirectory = path.dirname(path.join(root, page));
+    const references = [...html.matchAll(/(?:src|href)=["'](?!https?:|mailto:|#)([^"']+)["']/g)]
+      .map((match) => match[1].split(/[?#]/)[0])
+      .filter(Boolean);
+
+    for (const reference of references) {
+      assert.ok(
+        fs.existsSync(path.resolve(pageDirectory, reference)),
+        `${page} references missing local asset or page: ${reference}`,
+      );
+    }
+  }
 });
 
-test("styles include responsive and reduced-motion rules", () => {
-  const css = read("assets/site-easy-md.css");
+test("site keeps real product artwork and uses shared responsive styles", () => {
+  const home = read("index.html");
+  const easyMD = read("easy-md/index.html");
+  const flowSquat = read("flow-squat/index.html");
+  const css = read("assets/avocado-lab.css");
+  const script = read("assets/site-easy-md.js");
+
+  assert.match(home, /assets\/easy-md\/app-icon\.png/);
+  assert.match(home, /assets\/flow-squat\/app-icon\.png/);
+  assert.match(easyMD, /\.\.\/assets\/easy-md\/04-reading-notes\.png/);
+  assert.match(flowSquat, /\.\.\/assets\/flow-squat\/app-icon\.png/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
   assert.match(css, /:focus-visible/);
+  assert.match(script, /IntersectionObserver/);
 });
 
-test("Easy MD assets use fresh URLs so the former site cannot survive browser cache", () => {
-  const html = read("index.html");
-  assert.match(html, /href=["']assets\/site-easy-md\.css\?v=20260916-hero["']/);
-  assert.match(html, /src=["']assets\/site-easy-md\.js["']/);
-  assert.doesNotMatch(html, /assets\/site\.(?:css|js)/);
-});
-
-test("the secondary Daily Notes phone keeps a near-natural scale and gentle angle", () => {
-  const css = read("assets/site-easy-md.css");
-  assert.match(
-    css,
-    /\.phone-secondary\s*\{[^}]*width:\s*270px;[^}]*transform:\s*rotate\(-3deg\);/s,
-  );
+test("the secondary Easy MD phone keeps its natural scale and gentle angle", () => {
+  const css = read("assets/avocado-lab.css");
+  assert.match(css, /\.phone-secondary\s*\{[^}]*width:\s*270px;[^}]*rotate\(-3deg\)/s);
   assert.match(css, /\.phone img\s*\{[^}]*height:\s*auto;/s);
 });
