@@ -57,6 +57,16 @@ test("Easy MD privacy page discloses every locally stored preference", () => {
   }
 });
 
+test("site and privacy page accurately disclose Favorites advertising", () => {
+  const home = read("index.html");
+  const policy = read("privacy/easy-md/index.html");
+  assert.match(home, /Favorites banner ads/);
+  assert.doesNotMatch(home, /Data not collected|No analytics or advertising SDKs/);
+  assert.match(policy, /Starting with version 1\.3\.2, the free app shows banner advertisements in Favorites/);
+  assert.match(policy, /If you allow tracking, Google may use the advertising identifier for tracking/);
+  assert.match(policy, /If you decline tracking, eligible ads may still appear/);
+});
+
 test("document includes essential metadata and accessibility affordances", () => {
   const html = read("index.html");
   assert.match(html, /<html[^>]+lang=["']en["']/);
