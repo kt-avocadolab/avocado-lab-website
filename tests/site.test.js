@@ -49,12 +49,14 @@ test("Flow Squat has a product page without a download claim", () => {
   assert.match(html, /not (?:an official|affiliated)/i);
 });
 
-test("Flow Squat privacy policy documents camera and local session data", () => {
+test("Flow Squat privacy policy documents camera, optional recording and local session data", () => {
   const html = read("flow-squat/index.html");
   assert.match(html, /Privacy Policy for Flow Squat/);
   assert.match(html, /front camera/i);
-  assert.match(html, /never recorded/i);
-  assert.match(html, /never[^.]*uploaded/i);
+  assert.match(html, /analysis is never uploaded/i);
+  assert.match(html, /Record Workout/i);
+  assert.match(html, /Recording is off by default/i);
+  assert.match(html, /never leaves your device/i);
   assert.match(html, /training sessions/i);
   assert.match(html, /No account/i);
   assert.match(html, /No analytics/i);
