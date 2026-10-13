@@ -21,6 +21,7 @@ test("home introduces both Avocado Lab products and links to their pages", () =>
   const html = read("index.html");
   assert.match(html, /Easy MD/);
   assert.match(html, /Flow Squat/);
+  assert.match(html, /Optional workout recording/i);
   assert.match(html, /href=["']easy-md\/["']/);
   assert.match(html, /href=["']products\/flow-squat\/["']/);
   assert.doesNotMatch(html, /Flow\s?Running|Flowing Running/i);
@@ -44,6 +45,9 @@ test("Flow Squat has a product page without a download claim", () => {
   assert.match(html, /VALID/);
   assert.match(html, /NO REP/);
   assert.match(html, /on your device/i);
+  assert.match(html, /Recording off by default/i);
+  assert.match(html, /Photos add access only for optional recording/i);
+  assert.doesNotMatch(html, /No recording|does not record video|No Photos library/i);
   assert.match(html, /href=["']\.\.\/\.\.\/flow-squat\/["']/);
   assert.doesNotMatch(html, /apps\.apple\.com|Download on the App Store/i);
   assert.match(html, /not (?:an official|affiliated)/i);
@@ -53,10 +57,14 @@ test("Flow Squat privacy policy documents camera, optional recording and local s
   const html = read("flow-squat/index.html");
   assert.match(html, /Privacy Policy for Flow Squat/);
   assert.match(html, /front camera/i);
-  assert.match(html, /analysis is never uploaded/i);
+  assert.match(html, /does not upload the live camera feed/i);
   assert.match(html, /Record Workout/i);
-  assert.match(html, /Recording is off by default/i);
-  assert.match(html, /never leaves your device/i);
+  assert.match(html, /Record Workout is off by default/i);
+  assert.match(html, /In version 1\.0\.1, the video is saved to Photos automatically/i);
+  assert.match(html, /Auto-Save Video to Photos is a separate setting in version 1\.0\.2, off by default/i);
+  assert.match(html, /iOS share sheet/i);
+  assert.match(html, /Avocado Lab does not receive, upload, or view your videos/i);
+  assert.doesNotMatch(html, /saves it to your photo library when the set ends/i);
   assert.match(html, /training sessions/i);
   assert.match(html, /No account/i);
   assert.match(html, /No analytics/i);
