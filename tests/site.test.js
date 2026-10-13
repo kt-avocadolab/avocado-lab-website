@@ -23,7 +23,7 @@ test("home introduces both Avocado Lab products and links to their pages", () =>
   assert.match(html, /Flow Squat/);
   assert.match(html, /Optional workout recording/i);
   assert.match(html, /href=["']easy-md\/["']/);
-  assert.match(html, /href=["']products\/flow-squat\/["']/);
+  assert.match(html, /href=["']flow-squat\/["']/);
   assert.doesNotMatch(html, /Flow\s?Running|Flowing Running/i);
 });
 
@@ -38,18 +38,19 @@ test("Easy MD has a detailed v1.3.1 product page", () => {
   assert.match(html, /href=["']\.\.\/privacy\/easy-md\/["']/);
 });
 
-test("Flow Squat has a product page without a download claim", () => {
-  const html = read("products/flow-squat/index.html");
+test("Flow Squat page reflects the live version, in-review update, and App Store link", () => {
+  const html = read("flow-squat/index.html");
   assert.match(html, /Flow Squat/);
-  assert.match(html, /In development/i);
+  assert.match(html, /Available now · Version 1\.0\.1/i);
+  assert.match(html, /Version 1\.0\.2 · In App Review/i);
   assert.match(html, /VALID/);
   assert.match(html, /NO REP/);
   assert.match(html, /on your device/i);
   assert.match(html, /Recording off by default/i);
   assert.match(html, /Photos add access only for optional recording/i);
   assert.doesNotMatch(html, /No recording|does not record video|No Photos library/i);
-  assert.match(html, /href=["']\.\.\/\.\.\/privacy\/flow-squat\/["']/);
-  assert.doesNotMatch(html, /apps\.apple\.com|Download on the App Store/i);
+  assert.match(html, /href=["']\.\.\/privacy\/flow-squat\/["']/);
+  assert.match(html, /https:\/\/apps\.apple\.com\/hk\/app\/flow-squat\/id6819667705/);
   assert.match(html, /not (?:an official|affiliated)/i);
 });
 
@@ -72,10 +73,10 @@ test("Flow Squat privacy policy documents camera, optional recording and local s
   assert.match(html, /https:\/\/www\.avocado-lab\.com\/privacy\/flow-squat\//);
 });
 
-test("the former Flow Squat privacy path redirects to the canonical policy URL", () => {
-  const html = read("flow-squat/index.html");
-  assert.match(html, /url=\.\.\/privacy\/flow-squat\//i);
-  assert.match(html, /https:\/\/www\.avocado-lab\.com\/privacy\/flow-squat\//);
+test("the former Flow Squat product path redirects to the canonical product URL", () => {
+  const html = read("products/flow-squat/index.html");
+  assert.match(html, /url=\.\.\/\.\.\/flow-squat\//i);
+  assert.match(html, /https:\/\/www\.avocado-lab\.com\/flow-squat\//);
 });
 
 test("Easy MD privacy page preserves current local-storage and advertising disclosures", () => {
@@ -112,7 +113,7 @@ test("every public page includes core metadata and accessibility affordances", (
   for (const page of [
     "index.html",
     "easy-md/index.html",
-    "products/flow-squat/index.html",
+    "flow-squat/index.html",
     "privacy/flow-squat/index.html",
     "privacy/easy-md/index.html",
   ]) {
@@ -149,14 +150,14 @@ test("all local assets and page links referenced by HTML exist", () => {
 test("site keeps real product artwork and uses shared responsive styles", () => {
   const home = read("index.html");
   const easyMD = read("easy-md/index.html");
-  const flowSquat = read("products/flow-squat/index.html");
+  const flowSquat = read("flow-squat/index.html");
   const css = read("assets/avocado-lab.css");
   const script = read("assets/site-easy-md.js");
 
   assert.match(home, /assets\/easy-md\/app-icon\.png/);
   assert.match(home, /assets\/flow-squat\/app-icon\.png/);
   assert.match(easyMD, /\.\.\/assets\/easy-md\/04-reading-notes\.png/);
-  assert.match(flowSquat, /\.\.\/\.\.\/assets\/flow-squat\/app-icon\.png/);
+  assert.match(flowSquat, /\.\.\/assets\/flow-squat\/app-icon\.png/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
   assert.match(css, /:focus-visible/);
