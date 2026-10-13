@@ -48,13 +48,13 @@ test("Flow Squat has a product page without a download claim", () => {
   assert.match(html, /Recording off by default/i);
   assert.match(html, /Photos add access only for optional recording/i);
   assert.doesNotMatch(html, /No recording|does not record video|No Photos library/i);
-  assert.match(html, /href=["']\.\.\/\.\.\/flow-squat\/["']/);
+  assert.match(html, /href=["']\.\.\/\.\.\/privacy\/flow-squat\/["']/);
   assert.doesNotMatch(html, /apps\.apple\.com|Download on the App Store/i);
   assert.match(html, /not (?:an official|affiliated)/i);
 });
 
 test("Flow Squat privacy policy documents camera, optional recording and local session data", () => {
-  const html = read("flow-squat/index.html");
+  const html = read("privacy/flow-squat/index.html");
   assert.match(html, /Privacy Policy for Flow Squat/);
   assert.match(html, /front camera/i);
   assert.match(html, /does not upload the live camera feed/i);
@@ -69,13 +69,13 @@ test("Flow Squat privacy policy documents camera, optional recording and local s
   assert.match(html, /No account/i);
   assert.match(html, /No analytics/i);
   assert.match(html, /mailto:info@avocado-lab\.com/);
-  assert.match(html, /https:\/\/www\.avocado-lab\.com\/flow-squat\//);
+  assert.match(html, /https:\/\/www\.avocado-lab\.com\/privacy\/flow-squat\//);
 });
 
-test("the former Flow Squat privacy path redirects to the app-compatible policy URL", () => {
-  const html = read("privacy/flow-squat/index.html");
-  assert.match(html, /url=\.\.\/\.\.\/flow-squat\//i);
-  assert.match(html, /https:\/\/www\.avocado-lab\.com\/flow-squat\//);
+test("the former Flow Squat privacy path redirects to the canonical policy URL", () => {
+  const html = read("flow-squat/index.html");
+  assert.match(html, /url=\.\.\/privacy\/flow-squat\//i);
+  assert.match(html, /https:\/\/www\.avocado-lab\.com\/privacy\/flow-squat\//);
 });
 
 test("Easy MD privacy page preserves current local-storage and advertising disclosures", () => {
@@ -113,7 +113,7 @@ test("every public page includes core metadata and accessibility affordances", (
     "index.html",
     "easy-md/index.html",
     "products/flow-squat/index.html",
-    "flow-squat/index.html",
+    "privacy/flow-squat/index.html",
     "privacy/easy-md/index.html",
   ]) {
     assertPageBasics(page);
