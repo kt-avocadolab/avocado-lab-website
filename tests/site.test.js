@@ -25,13 +25,14 @@ test("home introduces Avocado Lab products and links to their pages", () => {
   assert.match(html, /Optional workout recording/i);
   assert.match(html, /href=["']easy-md\/["']/);
   assert.match(html, /href=["']flow-squat\/["']/);
-  assert.match(html, /href=["']training-tempo\/["']/);
+  assert.match(html, /href=["']training-beat\/["']/);
   assert.doesNotMatch(html, /Flow\s?Running|Flowing Running/i);
 });
 
 test("Training Beat product page presents planned features and pre-release status honestly", () => {
-  const html = read("training-tempo/index.html");
+  const html = read("training-beat/index.html");
   assert.match(html, /Training Beat/);
+  assert.match(html, /https:\/\/www\.avocado-lab\.com\/training-beat\//);
   assert.match(html, /iPhone \+ iPad/);
   assert.match(html, /iPhone &amp; iPad/);
   assert.match(html, /Pre-release/);
@@ -46,6 +47,12 @@ test("former Training Beat privacy path redirects to the canonical page", () => 
   const html = read("privacy/training-tempo/index.html");
   assert.match(html, /url=\.\.\/training-beat\//i);
   assert.match(html, /https:\/\/www\.avocado-lab\.com\/privacy\/training-beat\//);
+});
+
+test("former Training Beat product path redirects to the canonical page", () => {
+  const html = read("training-tempo/index.html");
+  assert.match(html, /url=\.\.\/training-beat\//i);
+  assert.match(html, /https:\/\/www\.avocado-lab\.com\/training-beat\//);
 });
 
 test("Easy MD has a detailed v1.3.1 product page", () => {
@@ -135,7 +142,7 @@ test("every public page includes core metadata and accessibility affordances", (
     "index.html",
     "easy-md/index.html",
     "flow-squat/index.html",
-    "training-tempo/index.html",
+    "training-beat/index.html",
     "privacy/flow-squat/index.html",
     "privacy/easy-md/index.html",
     "privacy/training-beat/index.html",
@@ -150,6 +157,7 @@ test("all local assets and page links referenced by HTML exist", () => {
     "easy-md/index.html",
     "products/flow-squat/index.html",
     "flow-squat/index.html",
+    "training-beat/index.html",
     "training-tempo/index.html",
     "privacy/easy-md/index.html",
     "privacy/flow-squat/index.html",
@@ -176,7 +184,7 @@ test("site keeps real product artwork and uses shared responsive styles", () => 
   const home = read("index.html");
   const easyMD = read("easy-md/index.html");
   const flowSquat = read("flow-squat/index.html");
-  const trainingTempo = read("training-tempo/index.html");
+  const trainingBeat = read("training-beat/index.html");
   const css = read("assets/avocado-lab.css");
   const script = read("assets/site-easy-md.js");
 
@@ -184,8 +192,8 @@ test("site keeps real product artwork and uses shared responsive styles", () => 
   assert.match(home, /assets\/flow-squat\/app-icon\.png/);
   assert.match(easyMD, /\.\.\/assets\/easy-md\/04-reading-notes\.png/);
   assert.match(flowSquat, /\.\.\/assets\/flow-squat\/app-icon\.png/);
-  assert.match(trainingTempo, /tempo-visual/);
-  assert.match(trainingTempo, /prefers-reduced-motion|assets\/avocado-lab\.css/);
+  assert.match(trainingBeat, /tempo-visual/);
+  assert.match(trainingBeat, /prefers-reduced-motion|assets\/avocado-lab\.css/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
   assert.match(css, /:focus-visible/);
