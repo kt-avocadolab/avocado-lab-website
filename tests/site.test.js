@@ -29,17 +29,17 @@ test("home introduces Avocado Lab products and links to their pages", () => {
   assert.doesNotMatch(html, /Flow\s?Running|Flowing Running/i);
 });
 
-test("Training Beat product page presents planned features and pre-release status honestly", () => {
+test("Training Beat product page presents its released version and App Store link", () => {
   const html = read("training-beat/index.html");
   assert.match(html, /Training Beat/);
   assert.match(html, /https:\/\/www\.avocado-lab\.com\/training-beat\//);
   assert.match(html, /iPhone \+ iPad/);
   assert.match(html, /iPhone &amp; iPad/);
-  assert.match(html, /Pre-release/);
-  assert.match(html, /Planned for v1\.0/);
-  assert.match(html, /not yet available on the App Store or TestFlight/i);
+  assert.match(html, /AVAILABLE NOW · VERSION 1\.0\.0/);
+  assert.match(html, /Available in v1\.0/);
+  assert.match(html, /https:\/\/apps\.apple\.com\/hk\/app\/training-beat-interval-timer\/id6826125667/);
   assert.match(html, /href=["']\.\.\/privacy\/training-beat\/["']/);
-  assert.doesNotMatch(html, /apps\.apple\.com|testflight\.apple\.com/i);
+  assert.doesNotMatch(html, /Pre-release|not yet available/i);
 });
 
 
