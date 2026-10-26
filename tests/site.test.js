@@ -26,6 +26,9 @@ test("home introduces Avocado Lab products and links to their pages", () => {
   assert.match(html, /href=["']easy-md\/["']/);
   assert.match(html, /href=["']flow-squat\/["']/);
   assert.match(html, /href=["']training-beat\/["']/);
+  assert.match(html, /href=["']https:\/\/apps\.apple\.com\/hk\/app\/training-beat-interval-timer\/id6826125667["']/);
+  assert.match(html, /Training Beat Privacy/);
+  assert.match(html, /assets\/training-beat\/app-icon\.png/);
   assert.doesNotMatch(html, /Flow\s?Running|Flowing Running/i);
 });
 
@@ -33,8 +36,13 @@ test("Training Beat product page presents its released version and App Store lin
   const html = read("training-beat/index.html");
   assert.match(html, /Training Beat/);
   assert.match(html, /https:\/\/www\.avocado-lab\.com\/training-beat\//);
-  assert.match(html, /iPhone \+ iPad/);
-  assert.match(html, /iPhone &amp; iPad/);
+  assert.match(html, /iPad-first/);
+  assert.match(html, /Designed for iPad/);
+  assert.match(html, /iPhone support/i);
+  assert.match(html, /assets\/training-beat\/class-coach-ipad\.jpg/);
+  assert.match(html, /id=["']screenshots["']/);
+  assert.equal((html.match(/assets\/training-beat\/screenshots\//g) || []).length, 3);
+  assert.match(html, /outline-button-light tempo-download-button/);
   assert.match(html, /AVAILABLE NOW · VERSION 1\.0\.0/);
   assert.match(html, /Available in v1\.0/);
   assert.match(html, /https:\/\/apps\.apple\.com\/hk\/app\/training-beat-interval-timer\/id6826125667/);
@@ -74,6 +82,9 @@ test("Flow Squat page reflects the live version, in-review update, and App Store
   assert.match(html, /VALID/);
   assert.match(html, /NO REP/);
   assert.match(html, /on your device/i);
+  assert.match(html, /assets\/flow-squat\/squat-athlete\.jpg/);
+  assert.match(html, /id=["']screenshots["']/);
+  assert.equal((html.match(/assets\/flow-squat\/screenshots\//g) || []).length, 4);
   assert.match(html, /Recording off by default/i);
   assert.match(html, /Photos add access only for optional recording/i);
   assert.doesNotMatch(html, /No recording|does not record video|No Photos library/i);
@@ -192,7 +203,11 @@ test("site keeps real product artwork and uses shared responsive styles", () => 
   assert.match(home, /assets\/flow-squat\/app-icon\.png/);
   assert.match(easyMD, /\.\.\/assets\/easy-md\/04-reading-notes\.png/);
   assert.match(flowSquat, /\.\.\/assets\/flow-squat\/app-icon\.png/);
-  assert.match(trainingBeat, /tempo-visual/);
+  assert.match(trainingBeat, /tempo-class-scene/);
+  assert.match(trainingBeat, /assets\/training-beat\/app-icon\.png/);
+  assert.match(flowSquat, /squat-athlete-photo/);
+  assert.match(css, /\.tempo-status \.outline-button\s*\{[^}]*background:\s*var\(--night\);[^}]*color:\s*var\(--cream\)/s);
+  assert.match(css, /\.product-screen-grid\s*\{/);
   assert.match(trainingBeat, /prefers-reduced-motion|assets\/avocado-lab\.css/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
