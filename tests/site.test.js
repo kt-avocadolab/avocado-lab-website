@@ -43,8 +43,10 @@ test("Training Beat product page presents its released version and App Store lin
   assert.match(html, /id=["']screenshots["']/);
   assert.equal((html.match(/assets\/training-beat\/screenshots\//g) || []).length, 3);
   assert.match(html, /outline-button-light tempo-download-button/);
-  assert.match(html, /AVAILABLE NOW · VERSION 1\.0\.0/);
-  assert.match(html, /Available in v1\.0/);
+  assert.match(html, /AVAILABLE NOW · VERSION 1\.0\.1/);
+  assert.match(html, /Available in v1\.0\.1/);
+  assert.match(html, /Watch does not directly sync with iPad/);
+  assert.match(read("privacy/training-beat/index.html"), /does not read or save your health data/);
   assert.match(html, /https:\/\/apps\.apple\.com\/hk\/app\/training-beat-interval-timer\/id6826125667/);
   assert.match(html, /href=["']\.\.\/privacy\/training-beat\/["']/);
   assert.doesNotMatch(html, /Pre-release|not yet available/i);
