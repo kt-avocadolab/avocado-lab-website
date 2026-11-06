@@ -48,7 +48,10 @@ test("Training Beat product page presents its released version and App Store lin
   assert.match(html, /Auto-on Floating Window/);
   assert.match(html, /Picture in Picture/);
   assert.match(html, /Watch does not directly sync with iPad/);
-  assert.match(read("privacy/training-beat/index.html"), /does not read or save your health data/);
+  const privacyPolicy = read("privacy/training-beat/index.html");
+  assert.match(privacyPolicy, /can read your live heart rate/);
+  assert.match(privacyPolicy, /paired iPhone for display during that session/);
+  assert.match(privacyPolicy, /not saved in Training Beat’s records or sent to Avocado Lab/);
   assert.match(html, /https:\/\/apps\.apple\.com\/hk\/app\/training-beat-interval-timer\/id6826125667/);
   assert.match(html, /href=["']\.\.\/privacy\/training-beat\/["']/);
   assert.doesNotMatch(html, /Pre-release|not yet available/i);
